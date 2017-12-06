@@ -1,0 +1,1198 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/layout.css">
+    <link rel="stylesheet" href="../CSS/advww.css">
+    <link rel="stylesheet" href="../CSS/top_nav_ybo.css">
+    <!--<link rel="stylesheet" href="../CSS/iconfont/iconfont.css">-->
+    <script src="../JS/jquery-1.11.1.js"></script>
+    <script src='../JS/adv.js'></script>
+    <script src="../JS/top_right_ybo.js"></script>
+    <script src="../JS/search_nav_ybo.js"></script>
+    <!--<script src='../JS/elevatorNav.js'></script>-->
+    <!--<script src="../JS/index_jq_ybo.js"></script>-->
+    <script>
+//        $(function(){
+//            show('.design','.design>p');
+//            hide('.design','.hmcontop');
+//            show('.office','.ofcontop');
+//            hide('.office','.ofcontop');
+//            show('.last','.lastcontop');
+//            hide('.last','.lastcontop');
+//            $('.cloud').mouseenter(function(){//上传文件是飞上来的
+//                $('.cloud').hide();
+//                $('.uptxt').show();
+//            });
+//            $('.uptxt').mouseleave(function(){
+//                $('.cloud').show();
+//                $('.uptxt').hide();
+//            });
+
+//        });
+
+$(window).load(function(){
+    imgbackground();
+    /*搜索框部分搜索内容弹出框*/
+    search_ybo('.searchContent01','612px',{top:'39px'});
+    $('.enterContent').focusin(function () {
+        search_ybo('.searchContent01','612px',{top:'39px'});
+
+        $('.searchContent01').css({display:'block'});
+    }).focusout(function () {
+        $('.searchContent01').css({display:'none'});
+    }).on('input propertychange',function () {  //input propertychange ->IE9以下不支持input，因此同时propertychange
+        // console.log($(this))
+        // console.log($(this).text())
+        // console.log($(this).val());
+        search_cnt_ybo('.searchContent01','586px',$(this).val());
+    });
+    showOrHide('.subFestival');
+    showOrHide('.subBargain');
+    showOrHide('.subRecruite');
+    showOrHide('.subPublicBenefit');
+    showOrHide('.subTravel');
+    showOrHide('.subCardDesign');
+    showOrHide('.subEnterprise');
+    showOrHide('.subCampus');
+    showOrHide('.subCommunistBuilding');
+    showOrHide('.subAdvertise');
+    service('.icon0');
+    service('.icon1');
+    service('.icon2');
+    $('.icon3').mouseenter(function(){
+        $('.service').css('display','block');
+        $('.icon3').css('backgroundColor','#10c65c');
+    });
+    $('.icon3').mouseleave(function(){
+        $('.service').css('display','none');
+        $('.icon3').css('backgroundColor','#686868');
+    });
+    service('.icon4');
+    service('.showWechat');
+    service('.toTop');
+    rightScroll();
+//    elevatorNav();
+    elevator();
+});
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <div style="position:fixed;z-index:900;" class="top_nav_ybo" id="top_nav_ybo">
+    <div class="left_logo_ybo">
+        <a href="./html/webInBuild_ybo.html"></a>
+        <span>轻松设计 高效办公</span>
+    </div>
+    <ul class="ul_ybo">
+        <li><a class="ybo_a" href="./html/webInBuild_ybo.html">首页</a></li>
+        <li class="for_i_ybo">
+            <a class="ybo_a" href="./html/webInBuild_ybo.html">所有分类</a>
+            <div id="syfl_ybo"></div>
+        </li>
+        <li class="sjcy_nav_ybo">
+            <a class="ybo_a" href="./html/webInBuild_ybo.html">设计创意</a>
+            <div class="sjcy_div_ybo">
+                <ul>
+                    <li><a href="">平面广告</a></li>
+                    <li><a href="">电商淘宝</a></li>
+                    <li><a href="">背景</a></li>
+                    <li><a href="">设计元素</a></li>
+                    <li><a href="">网页UI</a></li>
+                    <li><a href="">产品工业</a></li>
+                    <li><a href="">装饰装修</a></li>
+                    <li><a href="">高清图库</a></li>
+                    <li><a href="">视频音效</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="bgcy_nav_ybo">
+            <a class="ybo_a" href="./html/webInBuild_ybo.html">办公创意</a>
+            <div class="bgcy_div_ybo">
+                <ul>
+                    <li><a href="">PPT模板</a></li>
+                    <li><a href="">Excel模板</a></li>
+                    <li><a href="">文库模板</a></li>
+                    <li><a href="">简历模板</a></li>
+                    <li><a href="">Word模板</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a class="ybo_a" href="./html/webInBuild_ybo.html">正版图库</a></li>
+        <li><a class="ybo_a" href="./html/webInBuild_ybo.html">云简历</a></li>
+        <li class="dian_ybo">
+            <a class="ybo_a" href="./html/webInBuild_ybo.html">…</a>
+            <div class="dian_div_ybo">
+                <ul>
+                    <li><a href="">活动</a></li>
+                    <li><a href="">新人特权</a></li>
+                    <li><a href="">每日最新</a></li>
+                    <li><a href="">Q群联盟</a></li>
+                    <li><a href="">设计工具</a></li>
+                    <li><a href="">样机专区</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    <div class="right_dl_ybo">
+        <div class="rt_zs_bao">
+            <i></i>
+            <div class="rt_zs_parent_ybo">
+                <div class="rt_zs_ybo"></div>
+                <div class="rt_zs_z_ybo"><a href="./html/webInBuild_ybo.html">VIP中心</a></div>
+            </div>
+            <div class="rt_xm_zs_ybo">
+                <div>
+                    <i></i>
+                    <span><a href="./html/webInBuild_ybo.html">设计VIP</a></span>
+                </div>
+                <div>
+                    <i></i>
+                    <span><a href="./html/webInBuild_ybo.html">办公VIP</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="rt_yy_bao_ybo">
+            <div class="rt_yy_ybo">
+                <div class="rt_yy_icon"><i></i></div>
+                <div style="font-size: 14px" class="rt_yy_sc">上传作品</div>
+            </div>
+        </div>
+        <a href="./html/webInBuild_ybo.html" class="rt_dl_ybo">请登录</a>
+        <a class="rt_zc_ybo">免费注册</a>
+    </div>
+</div>
+    <div class="nav">
+        <!--顶部浮窗-->
+        <!--<div class="contop clearfix">-->
+            <!--<div class="lcontop ">-->
+                <!--<a href="#">千图网</a>-->
+                <!--轻松设计 高效办公-->
+            <!--</div>-->
+            <!--<div class="mcontop clearfix">-->
+                <!--<ul>-->
+                    <!--<li><a href="#">首页</a></li>-->
+                    <!--<li><a href="javascript:;">所有分类</a></li>-->
+                    <!--<li class="design">-->
+                        <!--<a href="#">设计创意</a>-->
+                        <!--<p class="hmcontop">-->
+                            <!--<a href="#">平面广告</a>-->
+                            <!--<a href="#">电商淘宝</a>-->
+                            <!--<a href="#">背景</a>-->
+                            <!--<a href="#">设计元素</a>-->
+                            <!--<a href="#">网页UI</a>-->
+                            <!--<a href="#">产品工业</a>-->
+                            <!--<a href="#">装饰装修</a>-->
+                            <!--<a href="#">高清图库</a>-->
+                            <!--<a href="#">视频音效</a>-->
+                        <!--</p>-->
+                    <!--</li>-->
+                    <!--<li class="office">-->
+                        <!--<a href="#">办公创意</a>-->
+                        <!--<p class="ofcontop">-->
+                            <!--<a href="#">PPT模板</a>-->
+                            <!--<a href="#">Excel模板</a>-->
+                            <!--<a href="#">文库模板</a>-->
+                            <!--<a href="#">简历模板</a>-->
+                            <!--<a href="#">word模板</a>-->
+                        <!--</p>-->
+                    <!--</li>-->
+                    <!--<li><a href="#">正版图库</a></li>-->
+                    <!--<li><a href="#">云简历</a></li>-->
+                    <!--<li class='last'>-->
+                        <!--<a href="#">...</a>-->
+                        <!--<p class="lastcontop">-->
+                            <!--<a href="#">活动</a>-->
+                            <!--<a href="#">新人特权</a>-->
+                            <!--<a href="">每日最新</a>-->
+                            <!--<a href="">Q群联盟</a>-->
+                            <!--<a href="">设计工具</a>-->
+                            <!--<a href="">样机专区</a>-->
+                        <!--</p>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<div class="rcontop">-->
+                <!--<div class="vip">-->
+                    <!--<a href="#">-->
+                        <!--<i class="iconfont">&#xe668;</i>-->
+                    <!--</a>-->
+                    <!--<span>终身</span>-->
+                    <!--&lt;!&ndash;<a class="vipCenter" href="#">VIP中心</a>&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<ul>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#">设计VIP</a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#">办公VIP</a></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                <!--</div>-->
+                <!--<div class="upload">-->
+                    <!--<a class="cloud" href="#"><i class="iconfont">&#xe61d;</i></a>-->
+                    <!--<a class="uptxt" href="#">上传文件</a>-->
+                <!--</div>-->
+                <!--<div class="login">-->
+                    <!--<a href="javascript:;">请登录</a>-->
+                    <!--<a href="javascript:;">免费注册</a>-->
+                <!--</div>-->
+
+            <!--</div>-->
+        <!--</div>-->
+        <div class="conbottom">
+            <div style="z-index: 777;" class="bottcon clearfix">
+
+                <h3>视觉创意 触手可及</h3>
+                <p>5000万+专业设计源文件 助你轻松设计</p>
+                <div class="search" style="z-index: 555;">
+
+                    <input class="enterContent" type="text">
+                    <a class="searchContent" href="#"></a>
+                    <div style='line-height: 50px;z-index:222;' class="searchContent01"></div>
+                </div>
+                <div class="searchContent">
+                    <div class="bottTitle">热门搜索 :</div>
+                    <a href="javascript:;">促销海报</a>
+                    <a href="javascript:;">企业文化</a>
+                    <a href="javascript:;">党建展板</a>
+                    <a href="javascript:;">校园小报</a>
+                    <a href="javascript:;">插画</a>
+                    <a href="javascript:;">圣诞节</a>
+                    <a href="javascript:;">公益海报</a>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="imgbottom lt_w clearfix">
+            <ul>
+                <li>
+                    <img src="../images/img_ww/imgbottom00.jpg">
+                    <div class="ho"></div>
+                    <span class="charator">冬季旅游</span>
+                </li>
+
+
+                <li>
+                    <img src="../images/img_ww/imgbottom01.jpg">
+                    <div class="ho"></div>
+                    <span class="charator">名片设计</span>
+                </li>
+                <li>
+                    <img src="../images/img_ww/imgbottom02.jpg">
+                    <div class="ho"></div>
+                    <span class="charator">圣诞狂欢</span>
+                </li>
+                <li>
+                    <img src="../images/img_ww/imgbottom03.jpg">
+                    <div class="ho"></div>
+                    <span class="charator">企业文化</span>
+                </li>
+                <li>
+                    <img src="../images/img_ww/imgbottom04.jpg">
+                    <div class="ho"></div>
+                    <span class="charator">促销海报</span>
+                </li>
+                <li>
+                    <img src="../images/img_ww/imgbottom05.jpg">
+                    <div class="ho"></div>
+                    <span class="charator">「美食」海报</span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="content clearfix">
+        <!--左部浮动 固定定位-->
+        <div class="left-btn-group">
+            <a href="javascript:;">节日海报</a>
+            <a href="javascript:;">促销海报</a>
+            <a href="javascript:;">招聘海报</a>
+            <a href="javascript:;">旅游海报</a>
+            <a href="javascript:;">公益海报</a>
+            <a href="javascript:;">名片设计</a>
+            <a href="javascript:;">企业展板</a>
+            <a href="javascript:;">党建展板</a>
+            <a href="javascript:;">校园小报</a>
+            <a href="javascript:;">宣传展架</a>
+        </div>
+        <!--节日海报-->
+        <div class="qiantu festival lt_w">
+            <div class="title">节日海报</div>
+            <ul class="clearfix subFestival">
+                <li>
+                    <a href="#"><img src="../images/img_ww/festival00.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">红色古典复古春节新春2018狗年大吉海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/festival01.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">红色古喜庆春节新春2018狗年大吉海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/festival02.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">清新一路走来感恩有你感恩节促销海报感恩有你</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/festival03.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">感恩节回馈促销活动海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/festival04.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">圣诞快乐圣诞树圣诞节雪花海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/festival05.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">圣诞节快乐主题海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/festival06.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">世界大学生节简约节日海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/festival07.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">浅色简约世界防治糖尿病日节日宣传海报</a>
+                </li>
+            </ul>
+            <div class="more">
+                <a href="#">查看更多</a>
+            </div>
+        </div>
+
+        <!--促销海报-->
+        <div class="qiantu bargain lt_w">
+            <div class="title">促销海报</div>
+            <ul class="clearfix subBargain">
+                <li>
+                    <a href="#"><img src="../images/img_ww/bargain00.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">绿色清新系唯美日系小清新促销海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/bargain01.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">森系美衣新品上市装扮你的美服饰促销海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/bargain02.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">简约时尚黑色星期五节日海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/bargain03.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">创意海报年中大促2018新春佳节促销海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/bargain04.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">新店开业香水促销海报设计</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/bargain05.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">大气黑色星期五促销海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/bargain06.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">创意个性时尚几何立体5折促销海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/bargain07.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">简约时尚商城感恩节节日促销海报</a>
+                </li>
+            </ul>
+            <div class="more">
+                <a href="#">查看更多</a>
+            </div>
+        </div>
+
+        <!--招聘海报-->
+        <div class="qiantu recruite lt_w">
+            <div class="title">招聘海报</div>
+            <ul class="clearfix subRecruite">
+                <li>
+                    <a href="#"><img src="../images/img_ww/recruite00.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">招贤纳士招聘黄色背景海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/recruite01.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">中国风水墨招聘海报人才招聘海报企业招聘</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/recruite02.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">渐变流体人才招聘海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/recruite03.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">彩色字体设计卡通厨师后厨切菜工简约招聘厨师海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/recruite04.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">紧急招人全城紧急要人创意招聘海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/recruite05.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">简约大气企业招聘创意海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/recruite06.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">创意招聘平面设计师海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/recruite07.gif"><s></s></a>
+                    <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">C4D精品渲染诚聘英才共创未来招聘海报</a>
+                </li>
+            </ul>
+            <div class="more">
+                <a href="#">查看更多</a>
+            </div>
+        </div>
+
+        <!--旅游海报-->
+        <div class="qiantu travel lt_w">
+            <div class="title">旅游海报</div>
+            <ul class="clearfix subTravel">
+                <li>
+                    <a href="#"><img src="../images/img_ww/travel00.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">北京旅游海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/travel01.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">创意时尚卡通周末去哪儿旅游海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/travel02.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">温泉秋冬旅游天然养生简约风旅游海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/travel03.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">雾凇奇观唯美旅游海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/travel04.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">清新桂花旅游海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/travel05.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">唯美冬季雪景日本北海道旅游旅行海报设计</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/travel06.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">江南水乡旅游宣传海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/travel07.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">背景天坛旅游旅行天空大气海报设计</a>
+                </li>
+            </ul>
+            <div class="more">
+                <a href="#">查看更多</a>
+            </div>
+        </div>
+
+
+        <!--公益海报-->
+        <div class="qiantu publicBenefit lt_w">
+            <div class="title">公益海报</div>
+            <ul class="clearfix subPublicBenefit">
+                <li>
+                    <a href="#"><img src="../images/img_ww/publicBenefit00.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">灰色简约拒绝雾霾公益宣传海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/publicBenefit01.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">低碳生活简约绿色公益海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/publicBenefit02.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">吸烟有害健康魔鬼烟雾黑色创意简洁公益海报你</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/publicBenefit03.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">尊老爱幼中式风格公益海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/publicBenefit04.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">原创插画健康生活绿色出行公益宣传海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/publicBenefit05.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">创意合成种下绿色种下希望防治荒漠公益海报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/publicBenefit06.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">简约珍惜粮食宣传公益海报设计</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/publicBenefit07.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">黑色简约爱心捐赠公益海报</a>
+                </li>
+            </ul>
+            <div class="more">
+                <a href="#">查看更多</a>
+            </div>
+        </div>
+
+        <!--名片设计-->
+        <div class="qiantu cardDesign lt_w">
+            <div class="title">名片设计</div>
+            <ul class="clearfix subCardDesign">
+                <li>
+                    <a href="#"><img src="../images/img_ww/cardDesign00.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">时尚名片设计</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/cardDesign01.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">企业个人中国风水墨山水创意名片</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/cardDesign02.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">蓝色名片设计</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/cardDesign03.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">简约创意高端黑色名片设计</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/cardDesign04.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">名片唯美小清新女性用品名片商务名片</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/cardDesign05.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">炫彩简约高档个人名片设计</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/cardDesign06.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">简约几何体高端红色名片设计</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/cardDesign07.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">黑白大气名片商务名片简约名片</a>
+                </li>
+            </ul>
+            <div class="more">
+                <a href="#">查看更多</a>
+            </div>
+        </div>
+
+        <!--企业展板-->
+        <div class="qiantu enterprise lt_w">
+            <div class="title">企业展板</div>
+            <ul class="clearfix subEnterprise">
+                <li>
+                    <a href="#"><img src="../images/img_ww/enterprise00.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">企业文化展板</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/enterprise01.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">企业文化展板</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/enterprise02.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">创意企业文化拼搏宣传展板</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/enterprise03.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">团队文化企业文化宣传展板设计</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/enterprise04.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">简约商务黑金梦想勤奋挑战企业文化系列展板</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/enterprise05.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">简约企业文化拼搏进取把握时间系列展板</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/enterprise06.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">黑色简约大气科技企业文化宣传系列海报设计</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/enterprise07.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">浅色简约用心服务精益求精企业文化系列展板</a>
+                </li>
+            </ul>
+            <div class="more">
+                <a href="#">查看更多</a>
+            </div>
+        </div>
+
+        <!--党建展板-->
+        <div class="qiantu communistBulding lt_w">
+            <div class="title">党建展板</div>
+            <ul class="clearfix subCommunistBuilding">
+                <li>
+                    <a href="#"><img src="../images/img_ww/communistBuilding00.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">十九大不忘初心牢记使命党建展板</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/communistBuilding01.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">十九大召开主题思想党建展板</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/communistBulding02.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">互助互爱共筑中国梦校园小报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/communistBulding03.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">十九大总结内容小报展板</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/communistBulding04.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">为全面建成小康社会砥砺奋进宣传栏</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/communistBulding05.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">万众一心开拓进取宣传栏</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/communistBulding06.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">不忘初心方得始终党建宣传栏</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/communistBulding07.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">贯彻十九大中国特色社会主义党建展板</a>
+                </li>
+            </ul>
+            <div class="more">
+                <a href="#">查看更多</a>
+            </div>
+        </div>
+
+        <!--校园小报-->
+        <div class="qiantu campus lt_w">
+            <div class="title">校园小报</div>
+            <ul class="clearfix subCampus">
+                <li>
+                    <a href="#"><img src="../images/img_ww/campus00.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">卡通数学学习校园小报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/campus01.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">清新校园保护环境公益展板小报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/campus02.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">清爽简约保护环境校园小报展板</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/campus03.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">保护环境校园文化展板</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/campus04.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">蓝色卡通科技宣传校园小报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/campus05.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">感恩主题校园小报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/campus06.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">蓝色太空校园科技小报设计科技展板设计</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/campus07.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">小学生卡通可爱自我介绍小报展板设计</a>
+                </li>
+            </ul>
+            <div class="more">
+                <a href="#">查看更多</a>
+            </div>
+        </div>
+
+        <!--宣传展架-->
+        <div class="qiantu advertise lt_w clearfix">
+            <div class="title">宣传展架</div>
+            <ul class="clearfix subAdvertise">
+                <li>
+                    <a href="#"><img src="../images/img_ww/advertise00.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">感恩节粉色创意简约促销展架</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/advertise01.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">2017感恩节感恩有你红色促销展架易拉宝报</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/advertise02.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">创意展架极简简洁感恩节打折促销易拉宝展架</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/advertise03.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">简约诚聘精英招聘展架设计</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/advertise04.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">房地产盛大开盘倒计时易拉宝X展架设计</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/advertise05.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">圣诞节促销展架</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/advertise06.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">黄色招生开课寒假班补习班开课展架</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/img_ww/advertise07.gif"><s></s></a>
+                     <span class="cover">
+                        <i class="download"></i>
+                        <i class="like"></i>
+                    </span>
+                    <a href="#">中国风茶之道优质茶叶尊享5折优惠促销展架</a>
+                </li>
+            </ul>
+
+                <a class="last" href="#">查看更多</a>
+
+        </div>
+
+
+    </div>
+<div class='right-btn-group'>
+    <ul class="btn_group">
+        <li>
+            <a href="#" class='icon00 icon0'>
+            <span>个人中心</span>
+            </a></li>
+        <li><a href="#" class='icon00 icon1'>
+            <span>上传领奖</span>
+        </a></li>
+        <li><a href="#"  class='icon00 icon2'>
+            <span>点击签到</span>
+        </a></li>
+        <li class="show-faq"><a href="#"  class='icon00 icon3'></a>
+            <div class="service">
+                <div class="faq-qq">
+                    QQ客服：4009987011
+                    <br>
+                    工作日: 9:00-22:00
+                    <br>
+                    节假日:9:00-18:00
+                </div>
+                <p class='qt-btn'>
+                    <a href="#">联系客服</a>
+                </p>
+                <p class="faq-phone">
+                    电话客服：400-9987011
+                    <br>
+                    工作日：9:00-18:00
+                </p>
+            </div>
+        </li>
+        <li><a href="#"  class='icon00 icon4'>
+            <span>意见反馈</span>
+        </a></li>
+    </ul>
+    <div class="show-Wechat">
+        <a href="#" class="showWechat">
+                    <span>
+                        <img src="../images/img_ww/wechat-g.png" alt="">
+                        <em>微信扫码领取大礼包</em>
+                    </span>
+        </a>
+    </div>
+    <div class="to-top">
+        <a class="toTop" href="#">
+            <span>返回顶部</span>
+        </a>
+    </div>
+</div>
+    <div class="footer">
+
+        <div class="footer_content lt_w">
+            <div class="footer_content_left">
+                <dl>
+                    <dt>常见问题</dt>
+                    <dd>成为特邀设计师</dd>
+                    <dd>成为原创贡献者</dd>
+                    <dd>注册登录</dd>
+                    <dd>账号/密码</dd>
+                    <dd>充值/售后</dd>
+                    <dd>版权投诉</dd>
+                </dl>
+                <dl>
+                    <dt>关于千图网</dt>
+                    <dd>关于我们</dd>
+                    <dd>媒体报道</dd>
+                    <dd>加入我们/dd>
+                    <dd>心系千图</dd>
+                    <dd>Q群联盟</dd>
+
+                </dl>
+                <dl>
+                    <dt>产品服务</dt>
+                    <dd>官方博客</dd>
+                    <dd>帮助中心</dd>
+
+                </dl>
+                <dl>
+                    <dt>友情链接</dt>
+                    <dd>我图网</dd>
+                    <dd>千库网</dd>
+                    <dd>摄图网</dd>
+                    <dd>包图网</dd>
+                    <dd>更多>></dd>
+                </dl>
+            </div>
+            <div class="footer_content_right">
+                <div class="footer_content_right_zixun">客服咨询</div>
+                <div class="footer_content_right_tel">
+                    <a href="">
+                        <div class="footer_content_right_telicon"></div>
+                        400-998-7011(9:00-18:00)</a>
+                </div>
+                <div class="footer_content_right_mail">
+                    <a href="">
+                        <div class="footer_content_right_mailicon"></div>
+                        feedback@58pic.com</a>
+                </div>
+                <div class="footer_content_right_jiaotan">
+                    <a href="">
+                        <div class="footer_content_right_qqicon"></div>
+                        <span>点我交谈</span></a>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="footer_bottom_content">
+                    <div class="footer_bottom_content_sina fl"></div>
+                    <div class="footer_bottom_content_wechat fl"></div>
+                    <div class="footer_bottom_content_copyright fl">版权声明</div>
+                    <div class="footer_bottom_content_cr fr">Copyright2013-2017&nbsp;千图网&nbsp;沪ICP备1001451号-6
+                        <s></s>上海工商&nbsp;安全实名验证&nbsp;信用网站</s></div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+<script src="../JS/top_cmn_ybo.js"></script>
+<script src="../JS/loop_img_ybo.js"></script>
+<script>
+//    var body = document.getElementById('img_lb_ybo');
+//    var arrayImg = ['./images/img_ybo/1.jpg', './images/img_ybo/2.jpg', './images/img_ybo/3.jpg',
+//        './images/img_ybo/4.jpg', './images/img_ybo/5.jpg', './images/img_ybo/6.jpg',
+//        './images/img_ybo/7.png', './images/img_ybo/8.jpg'];
+//    var bgcolor = ['#FFEFB1', '#FF6C1C', '#A71918', '#F9F0CF', '#63E0F4', '#FDFBFC', '#272556', '#BA1718', '#FFEFB1',]
+    new cmn_nav_map('red', 'syfl_ybo','url("../images/img_ybo/common.png")').init();
+//    ImgLunBo(body, arrayImg,true, 70, 5000, bgcolor, {left: '72px', top: '0px'});
+//    var body1 = document.getElementById('ycScreen');
+//    var arrayImg1 = [document.getElementById('one'),document.getElementById('two')];
+//    //    body, arrayImg, flag, speedImg, loopTime, bgcolor, screenObj, quanObj, leftRightObj
+//    ImgLunBo(body1, arrayImg1,false, 70, 10000, bgcolor, {left: '0px', top: '0px',height:'270px',width:'1200px'},{},{height:'40px',width:'40px',fontSize:'20px',borderRadius:'50%'});
+</script>
+</body>
+</html>
